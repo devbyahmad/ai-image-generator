@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.image-generator {
+    height: 40vh;
+    background: url('./bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.image-generator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    opacity: 0.5;
+}
+
+.image-generator .content {
+    color: white;
+    padding: 0px 15px;
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+}
+
+.image-generator h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.image-generator p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.image-generator .generate-form {
+    height: 56px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    margin: 45px 0 15px;
+    justify-content: space-between;
+}
+
+.generate-form .prompt-input {
+    width: 100%;
+    outline: none;
+    height: 100%;
+    font-size: 1rem;
+    border: none;
+    background-color: none;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+.generate-form .controls {
+    display: flex;
+    height: 100%;
+    gap: 10px;
+}
+
+.generate-form .img-quantity {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.generate-form .generate-btn {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    padding: 0px 25px;
+    border-radius: 30px;
+    background: #4949e7;
+    cursor: pointer;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 15px;
+    align-items: center;
+    margin: 50px 0;
+    justify-content: center;
+}
+
+.image-gallery .img-card {
+    width: 285px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #f2f2f2;
+}
+
+.image-gallery .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-gallery .img-card.loading img {
+    width: 80px;
+    height: 80px;
+}
+
+.image-gallery .img-card .download-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #fff;
+    height: 35px;
+    width: 35px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.image-gallery .img-card:not(.loading):hover .download-btn {
+    display: flex;
+}
+
+.image-gallery .img-card .download-btn img {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+}
+
+@media screen and (max-width:760px) {
+    .image-generator h1 {
+        font-size: 1.8rem;
+    }
+
+   .image-generator p{
+        font-size:1rem;
+    }
+
+    .image-generator .generate-form {
+        margin-top: 30px;
+        height: 50px;
+        display: block;
+    }
+
+    .generate-form .controls {
+        height: 40px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .generate-form .img-quantity {
+        color: #fff;
+    }
+
+    .generate-form .img-quantity option {
+        color: #000;
+    }
+
+    .generate-form .generate-btn {
+        height: 100%;
+    }
+
+    .image-gallery .img-card:not(.loading) .download-btn {
+    display: flex;
+}
+
+}
+
+@media screen and (max-width:500px) {
+    .image-gallery .img-card{
+        width: 100%;
+    }
+}
